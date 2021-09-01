@@ -38,7 +38,7 @@ const AddEmployee = () => {
         </div>
         <div className="form-group">
           <label htmlFor="body">
-            Employee Department: <sup>*</sup>
+            Employee Description: <sup>*</sup>
           </label>
           <textarea
             id="body"
@@ -48,7 +48,7 @@ const AddEmployee = () => {
           ></textarea>
         </div>
         <div className="form-group">
-          <label htmlFor="category">Employee Category:</label>
+          <label htmlFor="category">Employee Department:</label>
           <select
             id="category"
             className="form-control"
