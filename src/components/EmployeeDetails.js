@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import EmployeesService from "../services/EmployeesService";
 
 const EmployeeDetails = () => {
   const { id } = useParams();
   const [currentEmployee, setCurrentEmployee] = useState("");
+  const history = useHistory();
 
   useEffect(() => {
     EmployeesService.get(id)
@@ -15,6 +16,16 @@ const EmployeeDetails = () => {
         console.log("Something went wrong", error);
       });
   }, []);
+
+  const handleDelete = () => {
+    EmployeesService.remove(id)
+      .then((response) => {
+        history.push("/");
+      })
+      .catch((error) => {
+        console.log("Something went wrong", error);
+      });
+  };
 
   return (
     <div className="note-details main-content">
@@ -28,6 +39,7 @@ const EmployeeDetails = () => {
         </div>
         <div className="mb-3">{currentEmployee.body}</div>
       </article>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
