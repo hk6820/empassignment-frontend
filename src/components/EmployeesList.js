@@ -19,10 +19,10 @@ const EmployeesList = () => {
   return (
     <div className="main-content">
       <h4>List of Employees</h4>
-      <div className="notes-list mt-4">
+      <div className="employees-list mt-4">
         {employees.length > 0 ? (
           employees.map((employee) => (
-            <div key={employee.id} className="notes-preview mt-3">
+            <div key={employee.id} className="employees-preview mt-3">
               <Link to={`/employees/${employee.id}`}>
                 <h5 className="primary-color text-capitalize">
                   {employee.title}

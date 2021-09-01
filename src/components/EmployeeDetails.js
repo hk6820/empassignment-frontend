@@ -28,7 +28,7 @@ const EmployeeDetails = () => {
   };
 
   return (
-    <div className="note-details main-content">
+    <div className="employee-details main-content">
       <article>
         <h5 className="text-capitalize primary-color">
           {currentEmployee.title}
